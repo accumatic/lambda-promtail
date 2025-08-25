@@ -188,7 +188,8 @@ resource "aws_cloudwatch_log_group" "this" {
 }
 
 locals {
-  binary_path  = "${path.module}/lambda-promtail/bootstrap"
+ # binary_path  = "${path.module}/lambda-promtail/bootstrap"
+  binary_path  = "${path.module}/bootstrap"
   archive_path = "${path.module}/lambda-promtail/${var.name}.zip"
 }
 
