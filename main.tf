@@ -199,7 +199,7 @@ resource "null_resource" "function_binary" {
   }
 
   provisioner "local-exec" {
-    command     = "GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOFLAGS=-trimpath go build -mod=readonly -ldflags='-s -w' -o bootstrap"
+    command     = "GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOFLAGS=-trimpath go build -mod=readonly -ldflags='-s -w' -o bootstrap ./pkg"
     # working_dir = format("%s/%s", path.module, "lambda-promtail")
     working_dir = path.module
   }
